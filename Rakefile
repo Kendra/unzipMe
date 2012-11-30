@@ -17,9 +17,9 @@ Jeweler::Tasks.new do |gem|
   gem.name = "unzipMe"
   gem.homepage = "http://github.com/kendra/unzipMe"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "kendra.lawlor@nursinghomequality.com"
+  gem.summary = %Q{using system unzip command and then 7zip as failover}
+  gem.description = %Q{using system unzip command and then 7zip as failover}
+  gem.email = "lawlorkendra@gmail.com"
   gem.authors = ["Kendra Lawlor"]
   # dependencies defined in Gemfile
 end

@@ -1,3 +1,3 @@
-class Mds30UploadException < StandardError
+class UnzipMeException < StandardError
 
 end
