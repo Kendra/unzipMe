@@ -1,4 +1,4 @@
-module UnzipMeError
+class UnzipMeError
 
   def self.unzip_error(exit_code)
     case exit_code
