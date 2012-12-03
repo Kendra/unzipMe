@@ -1,6 +1,9 @@
 = unzipMe
 
-Description goes here.
+If your application is attempting to handle extracting Zip files with the system unzip command but has failures AND
+they can be unzipped by alternative means, this provides the 7zip failover as a second-in-line attempt at extraction.
+
+
 
 == Contributing to unzipMe
  

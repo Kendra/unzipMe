@@ -22,7 +22,6 @@ class Unzipper
 
     end
 
-
   end
 
   private
@@ -50,7 +49,5 @@ class Unzipper
     $?.exitstatus
 
   end
-
-
 
 end
