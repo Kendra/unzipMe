@@ -1,0 +1,3 @@
+class UnzipmeException < StandardError
+
+end

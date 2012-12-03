@@ -5,7 +5,7 @@ class Unzipper
 
   def self.unzip(file, args={})
 
-    raise(UnzipMeException, "UnzipMe needs a file.") unless file
+    raise(UnzipmeException, "UnzipMe needs a file.") unless file
     @args = args.merge!({:file => file})
 
     unzip_exitstatus = run_system_unzip
@@ -16,7 +16,7 @@ class Unzipper
 
       if sevenzip_exitstatus != SUCCESS
 
-        raise(UnzipMeException, "This is not a valid ZIP file. Exit Status Errors: \"unzip - #{UnzipMeError.unzip_error(unzip_exitstatus)}\" , \"7zip - #{UnzipMeError.seven_zip_error(sevenzip_exitstatus)}\"")
+        raise(UnzipmeException, "This is not a valid ZIP file. Exit Status Errors: \"unzip - #{UnzipmeError.unzip_error(unzip_exitstatus)}\" , \"7zip - #{UnzipmeError.seven_zip_error(sevenzip_exitstatus)}\"")
 
       end
 
@@ -26,7 +26,7 @@ class Unzipper
 
   private
 
-  def run_system_unzip
+  def self.run_system_unzip
 
     if @args.has_key?(:extract_to)
       system("unzip -d \"#{@args[:extract_to]}\" \"#{@args[:file]}\" > /dev/null")
@@ -38,7 +38,7 @@ class Unzipper
 
   end
 
-  def run_system_7zip
+  def self.run_system_7zip
 
     if @args.has_key?(:extract_to)
       system("7za x \"#{@args[:file]}\" -o\"#{@args[:extract_to]}\" > /dev/null")

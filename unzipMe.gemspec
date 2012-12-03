@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kendra Lawlor"]
-  s.date = "2012-11-27"
+  s.date = "2012-12-03"
   s.description = "using system unzip command and then 7zip as failover"
   s.email = "lawlorkendra@gmail.com"
   s.extra_rdoc_files = [
@@ -21,15 +21,18 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.md",
     "README.rdoc",
     "Rakefile",
     "VERSION",
     "lib/unzipMe.rb",
-    "lib/unzipMe/unzipMe_exception.rb",
-    "lib/unzipMe/unzipper.rb",
+    "lib/unzip_me/unzipme_error.rb",
+    "lib/unzip_me/unzipme_exception.rb",
+    "lib/unzip_me/unzipper.rb",
     "spec/spec_helper.rb",
+    "spec/unzipme_error_spec.rb",
     "spec/unzipper_spec.rb"
   ]
   s.homepage = "http://github.com/kendra/unzipMe"

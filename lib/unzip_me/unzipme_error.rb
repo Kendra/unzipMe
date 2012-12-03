@@ -1,8 +1,9 @@
-class UnzipMeError
+
+class UnzipmeError
 
   def self.unzip_error(exit_code)
     case exit_code
-      when 1 then "one or more warning errors were encountered"
+      when 1 then "one or more warning errors were encountered."
       when 2 then "a generic error in the zipfile format was detected."
       when 3 then "a severe error in the zipfile format was detected."
       when 4 then "unzip was unable to allocate memory for one or more buffers during program initialization."

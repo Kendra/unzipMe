@@ -1,3 +1,3 @@
-require 'unzipMe/unzipper'
-require 'unzipMe/unzipMe_exception'
-require 'unzipMe/unzipMe_error'
+require 'unzip_me/unzipper'
+require 'unzip_me/unzipme_exception'
+require 'unzip_me/unzipme_error'
