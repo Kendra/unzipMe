@@ -1,7 +1,46 @@
+class UnzipmeValidator
 
-class UnzipmeError
+  SUCCESS = 0
+  COMMAND_UNZIP = 0
+  COMMAND_7ZIP = 1
 
-  def self.unzip_error(exit_code)
+  def initialize(file)
+    raise(ArgumentError, "You must provide a file.") unless file
+    @file = file
+    test_quietly
+  end
+
+  def valid_zip?
+    @unzip_status == SUCCESS || @sevenzip_status == SUCCESS
+  end
+
+  def command
+    return COMMAND_UNZIP if @unzip_status == SUCCESS
+    return COMMAND_7ZIP if @sevenzip_status == SUCCESS
+  end
+
+  def error_message
+    "Unzip error: #{unzip_error(@unzip_status)}, 7zip error: #{seven_zip_error(@sevenzip_status)}"
+  end
+
+  private
+
+  def test_quietly()
+    @unzip_status = test_with_system_unzip
+    @sevenzip_status = test_with_system_7zip
+  end
+
+  def test_with_system_unzip
+    system "unzip -P '' -tq '#{file}' > /dev/null 2>&1"
+    $?.exitstatus
+  end
+
+  def test_with_system_7zip
+    system("7za t \"#{file}\" > /dev/null")
+    $?.exitstatus
+  end
+
+  def unzip_error(exit_code)
     case exit_code
       when 1 then "one or more warning errors were encountered."
       when 2 then "a generic error in the zipfile format was detected."
@@ -22,8 +61,7 @@ class UnzipmeError
     end
   end
 
-
-  def self.seven_zip_error(exit_code)
+  def seven_zip_error(exit_code)
     case exit_code
       when 1 then "Warning (Non fatal error(s))."
       when 2 then "Fatal error."
@@ -34,4 +72,6 @@ class UnzipmeError
     end
   end
 
+
 end
+
