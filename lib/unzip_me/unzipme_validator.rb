@@ -31,12 +31,12 @@ class UnzipmeValidator
   end
 
   def test_with_system_unzip
-    system "unzip -P '' -tq '#{file}' > /dev/null 2>&1"
+    system "unzip -P '' -tq '#{@file}' > /dev/null 2>&1"
     $?.exitstatus
   end
 
   def test_with_system_7zip
-    system("7za t \"#{file}\" > /dev/null")
+    system("7za t \"#{@file}\" > /dev/null")
     $?.exitstatus
   end
 
