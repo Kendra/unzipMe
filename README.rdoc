@@ -3,6 +3,24 @@
 If your application is attempting to handle extracting Zip files with the system unzip command but has failures AND
 they can be unzipped by alternative means, this provides the 7zip failover as a second-in-line attempt at extraction.
 
+== UnzipmeUnzipper
+
+set instance to UnzipmeUnzipper.new(path_and_filename, {:extract_to => path}).
+The second parameter is an optional hash with the :extract_to key.  This is used if you want to extract the files to a different directory.
+
+.new -> will validate the file being passed in, and if not readable through either unzip or 7za wil raise an UnzipmeException.
+
+call instance.unzip -> this will extract the files.
+call instance.file_list -> this will return a clean array of filenames within the zip archive with the header and trailer information removed.
+
+==UnzipmeValidator
+
+(The files are validated when initializing UnzipmeUnzipper, but this can be called just for testing the archive)
+
+set instance to UnzipmeValidator.new(path_and_filename).  This will test the archive but not return an exception if not valid.
+instance.valid_zip? -> returns true if readable by either unzip or 7zip.
+instance.command -> will return which command (unzip or 7ip that will be able to extract the file).
+instance.error_message -> will return a reable message that lists the system error message (determined by the exit code) for both unzip and 7za.
 
 
 == Contributing to unzipMe
