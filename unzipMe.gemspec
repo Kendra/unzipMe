@@ -9,12 +9,11 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kendra Lawlor"]
-  s.date = "2012-12-06"
+  s.date = "2012-12-07"
   s.description = "using system unzip command and then 7zip as failover"
   s.email = "lawlorkendra@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.md",
     "README.rdoc"
   ]
   s.files = [
@@ -23,7 +22,6 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.md",
     "README.rdoc",
     "Rakefile",
     "VERSION",
