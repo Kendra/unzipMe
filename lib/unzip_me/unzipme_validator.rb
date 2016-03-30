@@ -36,7 +36,7 @@ class UnzipmeValidator
   end
 
   def test_with_system_7zip
-    system("7za t \"#{@file}\" > /dev/null")
+    system("7za t -p'' \"#{@file}\" > /dev/null")
     $?.exitstatus
   end
 
