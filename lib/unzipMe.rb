@@ -1,3 +1,5 @@
+require 'fileutils'
 require 'unzip_me/unzipme_unzipper'
 require 'unzip_me/unzipme_exception'
 require 'unzip_me/unzipme_validator'
+require 'unzip_me/recursive_unzipper'
