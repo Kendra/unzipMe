@@ -4,3 +4,10 @@
 vendor/cache/*.gem
 .autotest
 *.swp
+
+# RVM files
+.ruby-gemset
+.ruby-version
+
+# Jeweler files
+pkg
